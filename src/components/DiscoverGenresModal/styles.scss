@@ -1,0 +1,97 @@
+.discoverGenres {
+  position: fixed;
+  top: 30%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+ 
+  width: 40vw;
+  margin: auto;
+  
+
+ 
+  z-index: 100;
+
+  
+  &__wrapper {
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    background-color: $white-darken-5;
+    box-shadow: 5px 10px 17px rgba(0,0,0,0.2), -5px -5px 17px rgba(0,0,0,0.2);
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  &__item {
+    padding: 10px 5px;
+
+    font-family: $font-family;
+    font-weight: $font-medium;
+    color: $secondary-text;
+
+    cursor: pointer;
+    transition: 0.5s color;
+    &:hover {
+      color: $dark-primary;
+    }
+
+    &--selected {
+      color: green;
+      &:before {
+        content: 	'\002b';
+      }
+    }
+  }
+
+  &__btn {
+    padding: 0;
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+    
+    &--closeBtn {
+     align-self: flex-end;
+
+     width: 25px;
+     height: 25px;
+
+     & > svg {
+       fill: $secondary-text;;
+       transition: 0.3s fill;
+       &:hover {
+         fill: $accent;
+       }
+     }
+     
+    }
+
+    &--confirmBtn {
+      align-self: flex-end;
+      
+      padding: 5px;
+
+      font-family: $font-family;
+      font-weight: $font-bold;
+      color: $secondary-text;
+      transition: 0.5s color;
+
+      &:hover {
+        color: $accent;
+      }
+    }
+  }
+}

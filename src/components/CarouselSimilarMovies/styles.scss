@@ -1,0 +1,39 @@
+.carouselSimilarMoviesItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-family: $font-family;
+
+  &__title {
+    width: 185px;
+    height: 20px;
+    margin: 0;
+    margin-bottom: 5px;
+
+    text-align: center;
+    
+  }
+  &__image {
+    width: 185px;
+    height: 104px;
+    border-radius: 5px;
+    overflow: hidden;
+    
+    & > img {
+      width: 185px;
+      height: 104px;
+    }
+  }
+  &__link {
+    color: $primary-text;
+    opacity: 0.87;
+    transition: all 0.6s;
+    &:hover {
+      color: $accent;  
+      opacity: 1;
+
+     text-decoration: none; 
+    }  
+  }
+}

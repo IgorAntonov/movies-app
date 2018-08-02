@@ -1,0 +1,83 @@
+.castAndCrew {
+  display: flex;
+
+  width: 432px;
+  height: 613px;
+  margin-left: 40px;
+  
+  font-family: $font-family;
+
+  &__crew {
+    display: flex;
+    flex-direction: column;
+
+    border: 1px solid $divider-color;
+    box-shadow: 5px 10px 17px rgba(0,0,0,0.2);
+    
+  }
+  &__cast {
+    display: flex;
+    flex-direction: column;
+     
+    margin-left: 10px;
+    border: 1px solid $divider-color;
+    box-shadow: 5px 10px 17px rgba(0,0,0,0.2);
+  }
+}
+
+.crewItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  border-bottom: 1px solid $divider-color;
+  padding: 10px 20px;
+
+  &__job {
+    margin: 0;
+    margin: auto;
+
+    color: $secondary-text;
+    font-weight: $font-light;
+  }
+  &__name {
+    margin: 0;
+    margin: auto;
+    
+    font-weight: $font-regular;
+    color: $primary-text;
+    opacity: 0.87;
+  }
+}
+
+.castItem {
+  display: flex;
+  flex-direction: column;
+
+  border-bottom: 1px solid $divider-color;
+  padding: 10px;
+
+  &__character {
+    margin: 0;
+    margin: auto;
+
+    color: $secondary-text;
+    font-weight: $font-light;
+  }
+  &__name {
+    margin: 0;
+    margin: auto;
+    
+    font-weight: $font-regular;
+    color: $primary-text;
+    opacity: 0.87;
+  }
+}
+
+.primaryListLink {
+  transition: 0.4s;
+  &:hover {
+    background-color: $white-darken-5;
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,11 @@
+.youtubeVideo {
+  display: flex;
+  justify-content: space-around;
+
+  padding: 20px;
+
+  &__player {
+    
+    box-shadow: 5px 10px 17px rgba(0,0,0,0.4); 
+  }
+}

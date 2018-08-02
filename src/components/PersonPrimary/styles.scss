@@ -1,0 +1,52 @@
+.personPrimary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  padding: 10px;
+  box-shadow: 5px 10px 17px rgba(0,0,0,0.4);
+  
+  &__poster {
+    background-color: rgba(14, 13, 13, 0.151);
+    box-shadow: 5px 10px 17px rgba(0,0,0,0.4);
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 40%;
+
+    padding: 10px 30px;
+    
+    background-color: rgba(14, 13, 13, 0.1);
+    box-shadow: 5px 5px 17px rgba(0,0,0,0.4);
+
+    &__item {
+      display: flex;
+
+      font-family: $font-family;
+      color: $primary-text;
+    }
+    &__content {
+      padding-right: 8px;
+
+      cursor: default;
+      &--ref {
+        color: $dark-primary;
+        cursor: pointer;
+        &:hover {
+          text-decoration: none;
+          color: $primary;
+        }
+      }
+    }
+  }
+
+  &__biography {
+    padding-top: 20px;
+
+    font-family: $font-family;
+    color: $primary-text;
+    cursor: default;
+  }
+}

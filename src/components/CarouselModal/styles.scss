@@ -1,0 +1,18 @@
+.carousel__modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 400;
+  
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+
+  background-color: rgba(0, 0, 0, 0.664);
+
+  &Wrapper {
+    margin: auto;
+
+    box-shadow: 0 0 100px rgba(0,0,0,1);
+  }
+}

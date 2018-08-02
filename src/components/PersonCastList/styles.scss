@@ -1,0 +1,42 @@
+.personList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: 20px;
+  padding: 10px;
+  box-shadow: 5px 10px 17px rgba(0,0,0,0.4);
+
+  &__header {
+    margin: 0;
+    margin-bottom: 10px;
+    font-family: $font-family;
+    color: $primary-text;
+    cursor: default;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__showButton {
+    padding: 10px;
+    width: 15%;
+    
+    cursor: pointer;
+    border: 2px solid $accent;;
+    border-radius: 3px;
+    background-color: $white-darken-5;
+    font-family: $font-family;
+    color: $accent;
+    font-weight: $font-bold;
+
+    transition: 0.3s;
+
+    &:hover {
+      box-shadow: 10px 2px 18px rgba(0, 150, 135, 0.37), -10px -2px 18px rgba(0, 150, 135, 0.37);
+      
+    }
+  }
+}

@@ -1,0 +1,406 @@
+.discoverForm {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.discoverFormSort {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 33%;
+
+  padding: 15px;
+
+  background-color: $white-darken-5;
+
+  &__wrapper {
+    display: flex;
+    align-self: center;
+
+    margin-top: 10px;
+  }
+
+  &__legend {
+    margin: 0;
+
+    font-family: $font-family;
+    font-weight: $font-bold;
+    color: $secondary-text;
+
+    cursor: default;
+  }
+
+  &__choices {
+    display: flex;
+    flex-direction: column;
+
+    padding: 0 10px;
+  }
+
+  &__upDown {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 0 10px;
+  }
+
+  &__orderBtn {
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+    padding: 0;
+    border: none;
+    
+    background-color: transparent;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+    & > svg {
+      fill: $secondary-text;
+    }
+
+    &--up {
+      
+      &Selected > svg {
+        fill: green;
+        cursor: default;
+      }
+    }
+    &--down {
+      &Selected > svg {
+        fill: red;
+        cursor: default;
+      }
+    }
+  }
+
+  &__btn {
+    margin: 2px;
+    padding: 5px 8px;
+
+    border: 1px solid $divider-color;
+    border-radius: 3px;
+
+    font-family: $font-family;
+    font-weight: $font-bold;
+    color: $secondary-text;
+    background-color: $white-darken-2;
+    cursor: pointer;
+    
+    transition: 0.5s background-color;
+
+    
+    &:hover {
+      background-color: $white-darken-5;
+    }
+    &:focus {
+      outline: none;
+    }
+    &--selected {
+      color: green;
+      cursor: default;
+      &:hover {
+        background-color: $white-darken-2;
+      }
+    }
+  }
+}
+
+.discoverFormYear {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 33%;
+
+  padding: 15px;
+
+  background-color: $white-darken-2;
+
+  &__legend {
+    margin: 0;
+
+    font-family: $font-family;
+    font-weight: $font-bold;
+    color: $secondary-text;
+
+    cursor: default;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+  }
+
+  &__divider {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    &:before,
+    &:after {
+      background-color: $divider-color;
+      content: "";
+      display: inline-block;
+      height: 1px;
+      position: relative;     
+      width: 40%;
+    }
+
+
+  }
+  &__divideLine {
+    font-family: $font-family;
+    font-weight: $font-bold;
+    color: $secondary-text;
+    cursor: default;
+    
+  }
+
+  &__choice {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+
+    font-family: $font-family;
+    font-weight: $font-bold;
+    color: $secondary-text;
+    cursor: default;
+  }
+
+  &__input {
+    margin-left: 20px;
+    padding-left: 10px;
+    border: 1px solid $divider-color;
+    
+    font-family: $font-family;
+    font-weight: $font-bold;
+    color: $secondary-text;
+
+    &:focus {
+      outline-color: $accent;
+    }
+  }
+}
+
+.discoverFormCert {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 33%;
+
+  padding: 15px;
+
+  background-color: $white-darken-5;
+
+  &__legend {
+    margin: 0;
+
+    font-family: $font-family;
+    font-weight: $font-bold;
+    color: $secondary-text;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  &__choices {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__method {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__btn {
+    margin: 2px;
+    padding: 5px 18px;
+
+    border: 1px solid $divider-color;
+    border-radius: 3px;
+
+    font-family: $font-family;
+    font-weight: $font-bold;
+    color: $secondary-text;
+    background-color: $white-darken-2;
+    cursor: pointer;
+    
+    transition: 0.5s background-color;
+    &:hover {
+      background-color: $white-darken-5;
+    }
+    &:focus {
+      outline: none;
+    }
+    &--selected {
+      color: green;
+      cursor: default;
+      &:hover {
+        background-color: $white-darken-2;
+      }
+    }
+  }
+  &__methodBtn {
+
+    margin: 2px;
+    padding: 5px 18px;
+
+    border: none;
+
+    font-family: $font-family;
+    font-weight: $font-bold;
+    color: $secondary-text;
+    background-color: transparent;
+    cursor: pointer;
+
+    transition: 0.5s color;
+
+    &:focus {
+      outline: none;
+    }
+
+    &--selected {
+      color: $accent;
+      cursor: default;
+    }
+    &:disabled {
+      color: $divider-color;
+      cursor: default;
+    }
+  }
+}
+
+.discoverFormGenres {
+  
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 50%;
+
+  padding: 15px;
+  
+  background-color: $white-darken-2;
+  &__legend {
+    position: relative;
+
+    margin: 0;
+
+    font-family: $font-family;
+    font-weight: $font-bold;
+    color: $secondary-text;
+  }
+
+  &__addBtn {
+    margin: 10px;
+    padding: 2px 8px;
+
+    border: 2px solid $divider-color;
+    border-radius: 3px;
+
+    font-family: $font-family;
+    font-weight: $font-bold;
+    color: $secondary-text;
+    background-color: $white-darken-2;
+    cursor: pointer;
+    
+    transition: 0.5s all;
+    &:hover {
+      background-color: $white-darken-5;
+    }
+    &:focus {
+      outline: none;
+      border-color: $accent;
+    }
+  }
+
+  &__submitBtn {
+    position: absolute;
+    top: 15%;
+    right: 0;
+    
+    padding: 3px 5px;
+    border: 1px solid $divider-color;
+    border-radius: 3px;
+
+    font-family: $font-family;
+    font-weight: $font-bold;
+    color: $primary-text;
+    background-color: $white-darken-5;
+    cursor: pointer;
+    
+    transition: 0.5s all;
+    &:hover {
+      text-decoration: none;
+      background-color: $accent;
+      border-color: $accent;
+      box-shadow: 10px 2px 18px rgba(0, 150, 135, 0.37), -10px -2px 18px rgba(0, 150, 135, 0.37);
+      color: $white-darken-2;
+    }
+    &:focus {
+      background-color: $accent;
+      text-decoration: none;
+      color: $white-darken-2;
+      outline: none;
+      border-color: $accent;
+    }
+  }
+
+  &__genresLine {
+    display: flex;
+    flex-wrap: wrap;
+
+    padding: 10px 0;
+
+    border-top: 2px solid $accent;
+    border-bottom: 2px solid $accent;
+       
+  }
+
+  &__genresItem {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    padding-right: 0;
+    margin: 5px 10px;
+    border: 1px solid $divider-color;
+
+    font-family: $font-family;
+    font-weight: $font-bold;
+    color: $secondary-text;
+    cursor: default;
+  }
+
+  &__closeBtn {
+    padding: 0;
+    padding-left: 2px;
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    &:focus {
+      outline: none;
+    }   
+    & > svg {
+      fill: $secondary-text;;
+      transition: 0.3s fill;
+      &:hover {
+        fill: $accent;
+      }
+    }
+  }
+
+  &__defaultLine {
+    padding: 14px;
+
+    font-family: $font-family;
+    font-weight: $font-bold;
+    color: $secondary-text;
+    cursor: default;
+  }
+}
+.disableSubmitBtn {
+  pointer-events: none;
+}

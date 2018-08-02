@@ -1,0 +1,76 @@
+.personCastItem {
+  display: flex;
+  
+
+  padding: 5px;
+  margin-bottom: 15px;
+
+  box-shadow: 3px 3px 17px rgba(0,0,0,0.4);
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-grow: 1;
+
+    padding: 5px 10px;
+
+    font-family: $font-family;
+    color: $primary-text;
+  }
+
+  &__main {
+    display: flex;
+    justify-content: space-around;
+
+    border-bottom: 2px solid $divider-color;
+
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
+    align-items: center;
+    cursor: default;
+  }
+  &__secondary {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
+    cursor: default;
+  }
+
+  &__genres {
+    margin: 0;
+  }
+
+  &__poster {
+    box-shadow: 3px 0px 7px rgba(0,0,0,0.4);
+  }
+  
+  &__header {
+    margin: 0;
+  }
+  &__date {
+    margin: 0;
+  }
+  &__character {
+    margin: 0;
+  }
+  &__overview {
+    margin: 0;
+
+    font-family: $font-family;
+    color: $primary-text;
+    cursor: default;
+  }
+}
+
+.personLink {
+  color: $dark-primary;
+  &:hover {
+    color: $primary;
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,37 @@
+.detailsPrimaryList {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  margin-left: 40px;
+
+  border: 1px solid $divider-color;
+  box-shadow: 5px 10px 17px rgba(0,0,0,0.2);
+
+  &__item {
+    display: flex;
+
+    border-bottom: 1px solid $divider-color;
+    width: 340px;
+    
+
+    &__content {
+      width: 50%;
+      margin: auto;
+      padding-left: 5px;
+      
+      font-family: $font-family;
+      color: $secondary-text;
+    }
+  }
+
+  &__link {
+    font-family: $font-family;
+    font-weight: $font-regular;
+    color: $secondary-text;          
+    &:hover {
+      text-decoration: none; 
+      background-color: $white-darken-2;
+      color: $dark-primary;
+    }
+  }
+}

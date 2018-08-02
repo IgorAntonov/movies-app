@@ -1,0 +1,11 @@
+.carousel__item {
+  width: 185px;
+  height: 278px;
+  border-radius: 10px;
+  overflow: hidden;
+  & img {
+    width: 185px;
+    height: 278px;
+  }
+}
+
