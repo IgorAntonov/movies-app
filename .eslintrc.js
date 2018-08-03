@@ -11,6 +11,11 @@ module.exports = {
   'plugins': [
     'react',
   ],
+  'rules': {
+    'linebreak-style': 0,
+    'comma-dangle': 0,
+    'arrow-parens': 0
+  },
   'parser': "babel-eslint",
   'parserOptions': {
     "ecmaVersion": 2017,
@@ -18,5 +23,11 @@ module.exports = {
     'ecmaFeatures': {
       'jsx': true,
     }
+  },
+  'env': {
+    'browser': true,
+    'es6': true,
+    'jest': true,
+    'node': true
   }
 }
