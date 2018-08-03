@@ -106,5 +106,9 @@
   "devDependencies": {
     "node-sass": "^4.7.2",
     "sass-loader": "^6.0.6"
+  },
+  "now": {
+    "alias": "movies-app.now.sh",
+    "name": "movies-app"
   }
 }
