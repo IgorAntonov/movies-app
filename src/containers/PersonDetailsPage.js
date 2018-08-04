@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 
 import PersonDetailsPage from '../components/PersonDetailsPage';
-import { fetchPersonDetails } from '../actions/personDetails';
-import { fetchPersonCredits } from '../actions/personMovieCredits';
+import { fetchPersonDetails } from '../ducks/person-details';
+import { fetchPersonCredits } from '../ducks/person-cast-crew';
 
 const mapStateToProps = (state, ownProps) => {
   const { id } = ownProps.match.params;

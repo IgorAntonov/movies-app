@@ -2,8 +2,7 @@ import { connect } from 'react-redux';
 
 import MoviesList from '../components/MoviesList';
 import wrapMoviesList from '../components/HOC/wrapMoviesList';
-import { getSortedDiscoverMovies } from '../reducers/discoverMovies';
-import { fetchDiscoverMovies } from '../actions/discoverMovies';
+import { fetchDiscoverMovies, getSortedDiscoverMovies } from '../ducks/discover-movies';
 
 const WrappedMoviesList = wrapMoviesList(MoviesList);
 

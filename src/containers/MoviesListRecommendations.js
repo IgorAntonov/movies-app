@@ -2,8 +2,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import MoviesList from '../components/MoviesList';
-import { getRecommendedMovies } from '../reducers/recommendedMovies';
-import { fetchRecommendedMovies } from '../actions/movieRecommendations';
+import { fetchRecommendedMovies, getRecommendedMovies } from '../ducks/recommended';
 import wrapMoviesList from '../components/HOC/wrapMoviesList';
 
 

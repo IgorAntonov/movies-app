@@ -1,21 +1,19 @@
 import { connect } from 'react-redux';
 
 import { DetailsPage } from './DetailsPage';
-import { fetchDetails } from '../../actions/moviesDetails';
-import { fetchCastAndCrew } from '../../actions/moviesCastAndCrew';
-import { fetchKeywords } from '../../actions/moviesKeywords';
-import { fetchSimilarMovies } from '../../actions/similarMovies';
-import { fetchMovieImages } from '../../actions/movieImages';
-import { fetchMovieVideos } from '../../actions/movieVideos';
-import { fetchMovieReviews } from '../../actions/movieReviews';
-import { getCurrentDetails } from '../../reducers/movies';
-import { getCast, getPrimaryCast } from '../../reducers/cast';
-import { getCrew, getPrimaryCrew } from '../../reducers/crew';
-import { getKeywords } from '../../reducers/keywords';
-import { getSimilarMovies } from '../../reducers/similarMovies';
-import { getMovieImages } from '../../reducers/movieImages';
-import { getMovieVideos } from '../../reducers/movieVideos';
-import { getMovieReviews } from '../../reducers/movieReviews';
+import { fetchDetails, getCurrentDetails } from '../../ducks/movies';
+import {
+  fetchCastAndCrew,
+  getCast,
+  getCrew,
+  getPrimaryCast,
+  getPrimaryCrew
+} from '../../ducks/cast-crew';
+import { fetchKeywords, getKeywords } from '../../ducks/keywords';
+import { fetchSimilarMovies, getSimilarMovies } from '../../ducks/similar-movies';
+import { fetchMovieImages, getMovieImages } from '../../ducks/movie-images';
+import { fetchMovieVideos, getMovieVideos } from '../../ducks/movie-videos';
+import { fetchMovieReviews, getMovieReviews } from '../../ducks/movie-reviews';
 
 const mapStateToProps = (state, ownProps) => {
   const currentMovieId = ownProps.match.params.id;

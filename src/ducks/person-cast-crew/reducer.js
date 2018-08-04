@@ -24,4 +24,4 @@ export const personCrewReducer = createReducer({
     [id]: resultCrew,
     fetching: false
   })
-});
+}, { fetching: false });

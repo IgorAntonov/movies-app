@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 
 import MoviesList from '../components/MoviesList';
-import { getSortedMoviesArray } from '../reducers/movies';
-import { fetchMoviesByQuery } from '../actions/moviesByQuery';
+import { getSortedMoviesArray } from '../ducks/movies';
+import { fetchMoviesByQuery } from '../ducks/movies-by-query';
 import wrapMoviesList from '../components/HOC/wrapMoviesList';
 
 

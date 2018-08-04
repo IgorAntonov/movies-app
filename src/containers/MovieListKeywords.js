@@ -1,8 +1,7 @@
 import { connect } from 'react-redux';
 
 import MoviesList from '../components/MoviesList';
-import { getKeywordsMovies } from '../reducers/moviesByKeyword';
-import { fetchMoviesByKeyword } from '../actions/moviesKeywords';
+import { fetchMoviesByKeyword, getKeywordsMovies } from '../ducks/keywords';
 import wrapMoviesList from '../components/HOC/wrapMoviesList';
 
 
