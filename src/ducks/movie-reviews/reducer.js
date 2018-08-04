@@ -1,17 +1,13 @@
-import _ from 'lodash';
+import { values } from 'lodash';
 import { createReducer } from 'redux-act';
 
 import { actions } from './actions';
 
 export const reducer = createReducer({
-  [actions.successReviews]: (state, { normalizedMovieReviews, id }) => ({
+  [actions.successReviews]: (state, { movieReviews, id }) => ({
     ...state,
-    [id]: normalizedMovieReviews
+    [id]: movieReviews
   })
 }, {});
 
-//////////selectors///////////////
-
-export const getMovieReviews = (movie) => {
-  return _.values(movie);
-};
+export const getMovieReviews = movieId => values(movieId);

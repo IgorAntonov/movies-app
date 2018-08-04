@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 import DiscoverGenresModal from '../DiscoverGenresModal';
-import { GENRES } from '../../constants/other';
+import { GENRES } from '../../ducks/GENRES';
 import Icon from '../Icon';
 
 export default class DiscoverForm extends Component {

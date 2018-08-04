@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import { values, omit, sortBy } from 'lodash';
 import { combineReducers } from 'redux';
 import { createReducer } from 'redux-act';
 
@@ -17,9 +17,9 @@ const top = createReducer({
     ...state,
     fetching: true
   }),
-  [actions.successTop]: (state, { normalizedData }) => ({
+  [actions.successTop]: (state, { movies }) => ({
     ...state,
-    ...normalizedData,
+    ...movies,
     fetching: false
   })
 }, initialState.top);
@@ -29,9 +29,9 @@ const popular = createReducer({
     ...state,
     fetching: true
   }),
-  [actions.successPopular]: (state, { normalizedData }) => ({
+  [actions.successPopular]: (state, { movies }) => ({
     ...state,
-    ...normalizedData,
+    ...movies,
     fetching: false
   })
 }, initialState.popular);
@@ -41,9 +41,9 @@ const upcoming = createReducer({
     ...state,
     fetching: true
   }),
-  [actions.successUpcoming]: (state, { normalizedData }) => ({
+  [actions.successUpcoming]: (state, { movies }) => ({
     ...state,
-    ...normalizedData,
+    ...movies,
     fetching: false
   })
 }, initialState.upcoming);
@@ -66,13 +66,8 @@ export const reducer = combineReducers({
   currentTotalPages
 });
 
-///////////////////selectors////////////////////////
-
 export const getSortedMoviesArray = (movies, sortParam) => {
-  const unsorted = _.values(_.omit(movies, 'fetching'));
-  return _.sortBy(unsorted, sortParam).reverse();
+  const unsorted = values(omit(movies, 'fetching'));
+  return sortBy(unsorted, sortParam).reverse();
 };
-
-export const getCurrentDetails = (details) => {
-  return _.values(details)[0];
-};
+export const getCurrentDetails = details => values(details)[0];

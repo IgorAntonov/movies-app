@@ -15,6 +15,7 @@ module.exports = {
     'linebreak-style': 0,
     'comma-dangle': 0,
     'arrow-parens': 0,
+    'camelcase': 0,
     'import/prefer-default-export': 'off',
     'react/jsx-filename-extension': [
       1,

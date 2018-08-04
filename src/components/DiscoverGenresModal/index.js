@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-import { GENRES } from '../../constants/other';
+import { GENRES } from '../../ducks/GENRES';
 import Icon from '../Icon';
 
 export default class DiscoverGenresModal extends Component {

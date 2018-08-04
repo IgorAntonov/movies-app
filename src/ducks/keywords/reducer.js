@@ -1,12 +1,12 @@
-import _ from 'lodash';
+import { values, sortBy } from 'lodash';
 import { createReducer } from 'redux-act';
 
 import { actions } from './actions';
 
 export const keywordReducer = createReducer({
-  [actions.successKeywords]: (state, { normalizedKeywords, id }) => ({
+  [actions.successKeywords]: (state, { keywords, id }) => ({
     ...state,
-    [id]: normalizedKeywords
+    [id]: keywords
   })
 }, {});
 
@@ -15,23 +15,16 @@ export const moviesByKeywordReducer = createReducer({
     ...state,
     fetching: true
   }),
-  [actions.successMoviesByKeyWord]: (state, { normalizedData, id, total_pages }) => ({
+  [actions.successMoviesByKeyWord]: (state, { movies, id, total_pages }) => ({
     ...state,
     [id]: {
       ...state[id],
-      ...normalizedData
+      ...movies
     },
     fetching: false,
     currentTotalPages: total_pages
   })
 }, { fetching: false });
 
-////Selectors//////////
-
-export const getKeywordsMovies = keyword => {
-  return _.sortBy(_.values(keyword), 'popularity').reverse();
-};
-
-export const getKeywords = (movie) => {
-  return _.values(movie);
-};
+export const getKeywordsMovies = keyword => sortBy(values(keyword), 'popularity').reverse();
+export const getKeywords = movie => values(movie);

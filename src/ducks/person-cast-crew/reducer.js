@@ -19,9 +19,9 @@ export const personCrewReducer = createReducer({
     ...state,
     fetching: true
   }),
-  [actions.successPersonCredits]: (state, { id, resultCrew }) => ({
+  [actions.successPersonCredits]: (state, { id, crew }) => ({
     ...state,
-    [id]: resultCrew,
+    [id]: crew,
     fetching: false
   })
 }, { fetching: false });

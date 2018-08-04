@@ -1,17 +1,13 @@
-import _ from 'lodash';
+import { values } from 'lodash';
 import { createReducer } from 'redux-act';
 
 import { actions } from './actions';
 
 export const reducer = createReducer({
-  [actions.succesSimilarMoviess]: (state, { normalizedSimilarMovies, id }) => ({
+  [actions.succesSimilarMoviess]: (state, { movies, id }) => ({
     ...state,
-    [id]: normalizedSimilarMovies
+    [id]: movies
   })
 }, {});
 
-//////////selectors///////////////
-
-export const getSimilarMovies = (movie) => {
-  return _.values(movie);
-};
+export const getSimilarMovies = movie => values(movie);

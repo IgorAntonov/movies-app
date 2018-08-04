@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import { values } from 'lodash';
 import { createReducer } from 'redux-act';
 
 import { actions } from './actions';
@@ -8,19 +8,15 @@ export const reducer = createReducer({
     ...state,
     fetching: true
   }),
-  [actions.successPersons]: (state, { normalizedData, total_pages, query }) => ({
+  [actions.successPersons]: (state, { persons, total_pages, query }) => ({
     ...state,
     [query]: {
       ...state[query],
-      normalizedData
+      persons
     },
     currentTotalPages: total_pages,
     fetching: false
   })
 }, { fetching: false });
 
-///////////////////selectors////////////////////////
-
-export const getPersonsArray = persons => {
-  return _.values(persons);
-};
+export const getPersonsArray = persons => values(persons);

@@ -1,28 +1,10 @@
 import axios from 'axios';
 import { normalize } from 'normalizr';
-import _ from 'lodash';
+import { omit } from 'lodash';
 
 import { actions } from './actions';
-import { movieListSchema } from '../../schemas/movies';
-import { BASIC_DISCOVER_URL } from '../../constants/api';
-
-export const fetchDiscoverMovies = (sort, date, cert, genres, page) => dispatch => {
-  dispatch(actions.requestDiscover());
-
-  const url = `${BASIC_DISCOVER_URL}&page=${page}&sort_by=${sortBy(sort)}&${releaseDate(date)}${certification(cert)}${withGenres(genres)}`;
-  
-  return axios.get(url)
-    .then(response => {
-      const { results, total_pages } = response.data;
-      const data = results.map(result => {
-        return _.omit(result, ['genre_ids', 'vote_count', 'video', 'adult']);
-      });
-      const normalizedData = normalize(data, movieListSchema).entities.movies;
-      const cuttedUrl = `${sort}${date}${cert}${genres}`;
-
-      dispatch(actions.successDiscover({ normalizedData, total_pages, cuttedUrl }));
-    })
-};
+import { movieListSchema } from '../movies-schema';
+import { BASIC_DISCOVER_URL } from '../api-constants';
 
 const sortBy = sort => {
   switch (sort) {
@@ -46,11 +28,10 @@ const sortBy = sort => {
       return '';
   }
 };
-const releaseDate = date => {
-  return date.length === 4 ? 
-    `primary_release_year=${date}` :
-    `primary_release_date.gte=${date.slice(0, 4)}&primary_release_date.lte=${date.slice(5)}`;     
-};
+const releaseDate = date => (date.length === 4
+  ? `primary_release_year=${date}`
+  : `primary_release_date.gte=${date.slice(0, 4)}&primary_release_date.lte=${date.slice(5)}`);
+
 const certification = cert => {
   if (cert === 'all') return '';
   const method = cert.includes('exact') ? 'certification' : 'certification.lte';
@@ -60,4 +41,24 @@ const certification = cert => {
 const withGenres = genres => {
   if (genres === 'all') return '';
   return `&with_genres=${genres.replace(/-/g, '|')}`;
+};
+
+
+export const fetchDiscoverMovies = (sort, date, cert, genres, page) => dispatch => {
+  dispatch(actions.requestDiscover());
+  const url = `${BASIC_DISCOVER_URL}&page=${page}&sort_by=${sortBy(sort)}&${releaseDate(date)}${certification(cert)}${withGenres(genres)}`;
+  return axios.get(url)
+    .then(response => {
+      const { results, total_pages } = response.data;
+      const data = results.map(result => omit(result, [
+        'genre_ids',
+        'vote_count',
+        'video',
+        'adult'
+      ]));
+      const { movies } = normalize(data, movieListSchema).entities;
+      const cuttedUrl = `${sort}${date}${cert}${genres}`;
+
+      dispatch(actions.successDiscover({ movies, total_pages, cuttedUrl }));
+    });
 };

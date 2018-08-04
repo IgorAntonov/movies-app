@@ -2,20 +2,16 @@ import axios from 'axios';
 import { normalize } from 'normalizr';
 
 import { actions } from './actions';
-import { API_KEY, BASIC_URL } from '../../constants/api';
-import { movieReviewsListSchema } from '../../schemas/movieReviews';
+import { API_KEY, BASIC_URL } from '../api-constants';
+import { movieReviewsListSchema } from './schema';
 
-export const fetchMovieReviews = id => dispatch => {
+export const fetchMovieReviews = movieId => dispatch => {
   dispatch(actions.requestReviews());
-
-  const url = `${BASIC_URL}movie/${id}/reviews?api_key=${API_KEY}&language=en-US&page=1`;
-
+  const url = `${BASIC_URL}movie/${movieId}/reviews?api_key=${API_KEY}&language=en-US&page=1`;
   return axios.get(url)
     .then(response => {
       const { id, results } = response.data;
-      
-      const normalizedMovieReviews = normalize(results, movieReviewsListSchema).entities.movieReviews;
-      
-      dispatch(actions.successReviews({ normalizedMovieReviews, id }));    
+      const { movieReviews } = normalize(results, movieReviewsListSchema).entities;
+      dispatch(actions.successReviews({ movieReviews, id }));
     });
 };

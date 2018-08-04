@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import { values, sortBy } from 'lodash';
 import { createReducer } from 'redux-act';
 
 import { actions } from './actions';
@@ -8,40 +8,38 @@ export const reducer = createReducer({
     ...state,
     fetching: true
   }),
-  [actions.successDiscover]: (state, { normalizedData, total_pages, cuttedUrl }) => ({
+  [actions.successDiscover]: (state, { movies, total_pages, cuttedUrl }) => ({
     ...state,
     [cuttedUrl]: {
       ...state[cuttedUrl],
-      normalizedData
+      ...movies
     },
     currentTotalPages: total_pages,
     fetching: false
   })
 }, { fetching: false });
 
-///////////////////selectors////////////////////////
-
-export const getSortedDiscoverMovies = (movies, sortParam) => {   
-  const unsorted = _.values(movies);
+export const getSortedDiscoverMovies = (movies, sortParam) => {
+  const unsorted = values(movies);
 
   switch (sortParam) {
     case 'popularity_up':
-      return _.sortBy(unsorted, 'popularity').reverse();
+      return sortBy(unsorted, 'popularity').reverse();
     case 'popularity_down':
-      return _.sortBy(unsorted, 'popularity');
+      return sortBy(unsorted, 'popularity');
     case 'rating_up':
-      return _.sortBy(unsorted, ['vote_average', 'original_title']).reverse();
+      return sortBy(unsorted, ['vote_average', 'original_title']).reverse();
     case 'rating_down':
-      return _.sortBy(unsorted, ['vote_average', 'original_title']);
+      return sortBy(unsorted, ['vote_average', 'original_title']);
     case 'alphabet_up':
-      return _.sortBy(unsorted, movie => movie.original_title.toLowerCase());
+      return sortBy(unsorted, movie => movie.original_title.toLowerCase());
     case 'alphabet_down':
-      return _.sortBy(unsorted, movie => movie.original_title.toLowerCase()).reverse();
+      return sortBy(unsorted, movie => movie.original_title.toLowerCase()).reverse();
     case 'release date_up':
-      return _.sortBy(unsorted, movie =>  Date.parse(movie.release_date)).reverse();
+      return sortBy(unsorted, movie => Date.parse(movie.release_date)).reverse();
     case 'release date_down':
-      return _.sortBy(unsorted, movie =>  Date.parse(movie.release_date));
+      return sortBy(unsorted, movie => Date.parse(movie.release_date));
     default:
       return unsorted;
-  }  
+  }
 };

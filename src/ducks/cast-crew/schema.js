@@ -6,8 +6,5 @@ const crew = new schema.Entity('crew', undefined, {
   idAttribute: value => value.credit_id
 });
 
-
-export const castSchema = [ cast ];
-export const crewSchema = [ crew ];
-
-
+export const castSchema = [cast];
+export const crewSchema = [crew];

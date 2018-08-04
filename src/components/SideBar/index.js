@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 
 import Icon from '../Icon';
-import { GENRES } from '../../constants/other';
+import { GENRES } from '../../ducks/GENRES';
 
 export default class SideBar extends Component {
 

@@ -7,11 +7,11 @@ export const reducer = createReducer({
     ...state,
     fetching: true
   }),
-  [actions.successMovies]: (state, { normalizedData, total_pages, query }) => ({
+  [actions.successMovies]: (state, { movies, total_pages, query }) => ({
     ...state,
     [query]: {
       ...state[query],
-      ...normalizedData
+      ...movies
     },
     currentTotalPages: total_pages,
     fetching: false

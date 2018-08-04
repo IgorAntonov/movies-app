@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
 import Header from '../components/Header';
-import { GENRES } from '../constants/other';
+import { GENRES } from '../ducks/GENRES';
 
 const mapStateToProps = (state, ownProps) => {
   const { pathname } = ownProps.location;

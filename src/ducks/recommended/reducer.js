@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import { values } from 'lodash';
 import { createReducer } from 'redux-act';
 
 import { actions } from './actions';
@@ -13,19 +13,15 @@ export const reducer = createReducer({
     ...state,
     fetching: true
   }),
-  [actions.successRecommended]: (state, { normalizedRecommendedMovies, id, total_pages }) => ({
+  [actions.successRecommended]: (state, { movies, id, total_pages }) => ({
     ...state,
     [id]: {
       ...state[id],
-      ...normalizedRecommendedMovies
+      ...movies
     },
     fetching: false,
     currentTotalPages: total_pages
   })
 }, initialState);
 
-//////////selectors///////////////
-
-export const getRecommendedMovies = movie => {
-  return _.values(movie);
-};
+export const getRecommendedMovies = movie => values(movie);

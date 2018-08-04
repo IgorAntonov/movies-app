@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import noPoster from '../../img/questionMark.png';
-import { GENRES } from '../../constants/other';
+import { GENRES } from '../../ducks/GENRES';
 
 const PersonCastItem = props => {
   const {character, release_date, original_title, 
