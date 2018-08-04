@@ -6,7 +6,7 @@ import MoviesByQuery from './components/MoviesByQuery';
 import PopularMovies from './containers/MoviesListPopular';
 import TopRatedMovies from './containers/MoviesListTop';
 import UpcomingMovies from './containers/MoviesListUpcoming';
-import DetailsPage from './containers/DetailsPage';
+import { DetailsPage } from './pages';
 import Recommendations from './components/Recommendations';
 import GenreMovies from './components/GenreMovies';
 import PersonDetailsPage from './containers/PersonDetailsPage';
