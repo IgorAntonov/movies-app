@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { DetailsPrimary } from '../../features/DetailsPrimary';
 import { DetailsMedia } from '../../features/DetailsMedia';
 import { DetailsSimilar } from '../../features/DetailsSimilar';
-import DetailsRecommendations from '../../components/DetailsRecommendations';
+import { DetailsRecommendations } from '../../features/DetailsRecommendations';
 import LoadingSpinner from '../../components/LoadingSpinner';
 
 export class DetailsPage extends Component {
