@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { PersonPrimary } from '../../features/PersonPrimary';
-import PersonCastList from '../../components/PersonCastList';
+import { PersonCast } from '../../features/PersonCast';
 import PersonCrewList from '../../components/PersonCrewList';
 import { LoadingSpinner } from '../../components/LoadingSpinner';
 
@@ -46,7 +46,7 @@ export class PersonPage extends Component {
     return (
       <div className="personDetails">
         <PersonPrimary details={details} />
-        {cast.length > 0 && <PersonCastList cast={cast} />}
+        {cast.length > 0 && <PersonCast cast={cast} />}
         {crew.length > 0 && <PersonCrewList crew={crew} />}
       </div>
     );
