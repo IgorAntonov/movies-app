@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import PersonPrimary from '../../components/PersonPrimary';
+import { PersonPrimary } from '../../features/PersonPrimary';
 import PersonCastList from '../../components/PersonCastList';
 import PersonCrewList from '../../components/PersonCrewList';
 import { LoadingSpinner } from '../../components/LoadingSpinner';
