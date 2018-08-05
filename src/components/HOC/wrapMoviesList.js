@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import LoadingSpinner from '../LoadingSpinner';
+import { LoadingSpinner } from '../LoadingSpinner';
 
 const wrapMoviesList = (WrappedComponent) => {
   class MovieListWrapper extends Component {

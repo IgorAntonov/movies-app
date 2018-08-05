@@ -6,10 +6,9 @@ import MoviesByQuery from './components/MoviesByQuery';
 import PopularMovies from './containers/MoviesListPopular';
 import TopRatedMovies from './containers/MoviesListTop';
 import UpcomingMovies from './containers/MoviesListUpcoming';
-import { DetailsPage } from './pages';
+import { DetailsPage, PersonPage } from './pages';
 import Recommendations from './components/Recommendations';
 import GenreMovies from './components/GenreMovies';
-import PersonDetailsPage from './containers/PersonDetailsPage';
 import KeywordsMoviesList from './components/KeywordsMoviesList';
 import PersonByQuery from './containers/PersonByQuery';
 import DiscoverMovies from './components/DiscoverMovies';
@@ -28,7 +27,7 @@ export const App = () => (
       <Route path="/upcoming" component={UpcomingMovies} />
       <Route path="/genres/:id" component={GenreMovies} />
       <Route path="/keyword/:name/:id" component={KeywordsMoviesList} />
-      <Route path="/person/:id" component={PersonDetailsPage} />
+      <Route path="/person/:id" component={PersonPage} />
       <Route path="/discover/:sort/:date/:cert/:genres" component={DiscoverList} />
       <Route path="/" component={DiscoverMovies} />
     </Switch>
