@@ -1,0 +1,1 @@
+export { CarouselModal } from './CarouselModal';

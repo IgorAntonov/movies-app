@@ -10,9 +10,6 @@
   box-shadow: 5px 5px 7px rgba(0,0,0,0.4);
   background: $accent;
 
-  &--disabled > .carousel__icon > svg {
-    animation: rotateDisabled 0.5s linear;
-  }
   &:active {
     transform: scale(1.1);
   }
@@ -28,30 +25,5 @@
   margin: auto;
   & > svg {
     fill: $white-darken-3;
-  }
-}
-
-
-@keyframes rotateDisabled {
-  0% {
-    transform: rotate(0deg);
-  }
-  20% {
-    transform: rotate(180deg);
-  }
-  40% {  
-    transform: rotate(360deg);
-  }
-  70% {
-    transform: rotate(540deg);
-  } 
-  100% {  
-    transform: rotate(720deg);
-  }
-}
-
-@keyframes colorDisabled {
-  100% {
-    fill: red;
   }
 }

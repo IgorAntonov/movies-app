@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { DetailsPrimary } from '../../features/DetailsPrimary';
-import DetailsMedia from '../../components/DetailsMedia';
+import { DetailsMedia } from '../../features/DetailsMedia';
 import DetailsRecommendations from '../../components/DetailsRecommendations';
 import DetailsSimilar from '../../components/DetailsSimilar';
 import LoadingSpinner from '../../components/LoadingSpinner';

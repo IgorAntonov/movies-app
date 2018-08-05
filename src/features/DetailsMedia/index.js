@@ -1,0 +1,1 @@
+export { DetailsMedia } from './DetailsMedia';

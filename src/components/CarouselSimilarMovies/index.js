@@ -2,8 +2,6 @@ import React from 'react';
 import Carousel from 'nuka-carousel';
 import { Link } from 'react-router-dom';
 
-import CarouselDecorators from '../CarouselDecorators';
-
 
 const CarouselSimilarMovies = ({ slides }) =>{
   
@@ -32,7 +30,7 @@ const CarouselSimilarMovies = ({ slides }) =>{
   }); 
  
   return ( 
-    <Carousel decorators={CarouselDecorators} {...settings} >
+    <Carousel {...settings} >
       {renderSlides}
     </Carousel>
   );  
