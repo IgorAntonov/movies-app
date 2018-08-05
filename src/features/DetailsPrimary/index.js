@@ -1,0 +1,1 @@
+export { DetailsPrimary } from './DetailsPrimary';

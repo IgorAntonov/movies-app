@@ -1,0 +1,1 @@
+export { fetchAllDetails } from './fetchAllDetails';

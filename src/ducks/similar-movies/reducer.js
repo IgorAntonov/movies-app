@@ -4,7 +4,7 @@ import { createReducer } from 'redux-act';
 import { actions } from './actions';
 
 export const reducer = createReducer({
-  [actions.succesSimilarMoviess]: (state, { movies, id }) => ({
+  [actions.successSimilarMovies]: (state, { movies, id }) => ({
     ...state,
     [id]: movies
   })

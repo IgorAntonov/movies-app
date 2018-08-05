@@ -17,6 +17,7 @@ module.exports = {
     'arrow-parens': 0,
     'camelcase': 0,
     'import/prefer-default-export': 'off',
+    'react/jsx-one-expression-per-line': 0,
     'react/jsx-filename-extension': [
       1,
       {

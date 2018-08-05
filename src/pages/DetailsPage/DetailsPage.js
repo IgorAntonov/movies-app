@@ -1,91 +1,96 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-import DetailsPrimary from '../../components/DetailsPrimary';
+import { DetailsPrimary } from '../../features/DetailsPrimary';
 import DetailsMedia from '../../components/DetailsMedia';
 import DetailsRecommendations from '../../components/DetailsRecommendations';
 import DetailsSimilar from '../../components/DetailsSimilar';
 import LoadingSpinner from '../../components/LoadingSpinner';
 
 export class DetailsPage extends Component {
+  static propTypes = {
+    fetchAllDetails: PropTypes.func.isRequired,
+    details: PropTypes.shape({}),
+    primaryCast: PropTypes.arrayOf(PropTypes.object).isRequired,
+    primaryCrew: PropTypes.arrayOf(PropTypes.object).isRequired,
+    movieImages: PropTypes.arrayOf(PropTypes.object).isRequired,
+    movieVideos: PropTypes.arrayOf(PropTypes.object).isRequired,
+    keywords: PropTypes.arrayOf(PropTypes.object).isRequired,
+    similarMovies: PropTypes.arrayOf(PropTypes.object).isRequired,
+    match: PropTypes.shape({
+      params: PropTypes.shape({
+        id: PropTypes.string
+      }),
+    }).isRequired,
+  }
+
+  static defaultProps = {
+    details: {}
+  }
+
   state = {
-    isLoaded: false
+    rendering: false
   };
 
   componentDidMount() {
-    const { id } = this.props.match.params;
-    (async () => {
-      await Promise.all([
-        this.props.fetchDetails(id),
-        this.props.fetchCastAndCrew(id),
-        this.props.fetchKeywords(id),
-        this.props.fetchSimilarMovies(id),
-        this.props.fetchMovieImages(id),
-        this.props.fetchMovieVideos(id),
-        this.props.fetchMovieReviews(id)
-      ]);
-      this.setState({ rendering: true });
-    })();
-  }
-
-  componentWillReceiveProps(nextProps) {
-    const { id } = this.props.match.params;
-    const nextId = nextProps.match.params.id;
-
-    if (id !== nextId) {
-      (async () => {
-        await this.setState({ rendering: false });
-        await Promise.all([
-          this.props.fetchDetails(nextId),
-          this.props.fetchCastAndCrew(nextId),
-          this.props.fetchKeywords(nextId),
-          this.props.fetchSimilarMovies(nextId),
-          this.props.fetchMovieImages(nextId),
-          this.props.fetchMovieVideos(nextId),
-          this.props.fetchMovieReviews(nextId)
-        ]);
-        this.setState({ rendering: true });
-      })();
-    }
+    const { match, fetchAllDetails } = this.props;
+    const cb = () => this.setState({ rendering: true });
+    fetchAllDetails(match.params.id, cb);
   }
 
   shouldComponentUpdate(nextProps, nextState) {
+    const { match } = this.props;
+    const prevId = nextProps.match.params.id;
     const { rendering } = this.state;
-    return rendering !== nextState.rendering;
+    if (rendering !== nextState.rendering || match.params.id !== prevId) {
+      return true;
+    }
+    return false;
   }
 
-  renderPage() {
-    const { id } = this.props.match.params;
-    const {details, primaryCrew, primaryCast, movieVideos,
-      movieImages, keywords, similarMovies} = this.props;
+  componentDidUpdate(prevProps) {
+    const { match, fetchAllDetails } = this.props;
+    const { id } = match.params;
+    const prevId = prevProps.match.params.id;
+    if (id !== prevId) {
+      this.setState({ rendering: false }); //eslint-disable-line
+      const cb = () => this.setState({ rendering: true });
+      fetchAllDetails(id, cb);
+    }
+  }
+
+  render() {
+    const {
+      details, primaryCrew, primaryCast, movieVideos,
+      movieImages, keywords, similarMovies, match
+    } = this.props;
+    const { rendering } = this.state;
+    const { id } = match.params;
+
+    if (!rendering) {
+      return (
+        <div className="detailsSpinnerWrapper">
+          <LoadingSpinner />
+        </div>
+      );
+    }
     return (
-      <div className='details' >
-        <DetailsPrimary 
-        details={details} 
-        primaryCrew={primaryCrew}
-        primaryCast={primaryCast}
+      <div className="details">
+        <DetailsPrimary
+          details={details}
+          primaryCrew={primaryCrew}
+          primaryCast={primaryCast}
         />
-        <DetailsMedia 
+        <DetailsMedia
           movieImages={movieImages}
           movieVideos={movieVideos}
         />
-        <DetailsSimilar 
+        <DetailsSimilar
           keywords={keywords}
           similarMovies={similarMovies}
         />
         <DetailsRecommendations id={id} />
       </div>
-    )
-  };
-
-  renderLoading() {
-    return (
-      <div className='detailsSpinnerWrapper' >
-        <LoadingSpinner />
-      </div>
     );
-  }
-
-  render() {
-    return this.state.rendering ? this.renderPage() : this.renderLoading();
   }
 }
