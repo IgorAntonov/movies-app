@@ -1,0 +1,1 @@
+export { CarouselSimilar } from './CarouselSimilar';

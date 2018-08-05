@@ -1,0 +1,1 @@
+export { DetailsSimilar } from './DetailsSimilar';
