@@ -1,0 +1,1 @@
+export { SideBarGenres } from './SideBarGenres';

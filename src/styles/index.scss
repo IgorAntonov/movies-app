@@ -3,10 +3,10 @@
 @import './custom/main.scss';
 
 @import '../components/LoadingSpinner/styles.scss';
-@import '../components/Header/styles.scss';
-@import '../components/SideBar/styles.scss';
-@import '../components/SearchBar/styles.scss';
+@import '../features/Header/styles.scss';
+
 @import '../components/MoviesList/styles.scss';
+
 @import '../pages/DetailsPage/styles.scss';
 @import '../features/DetailsPrimary/styles.scss';
 @import '../features/DetailsMedia/styles.scss';

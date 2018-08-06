@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import Header from './containers/ConnectedHeader';
+import { Header } from './features/Header';
 import MoviesByQuery from './components/MoviesByQuery';
 import PopularMovies from './containers/MoviesListPopular';
 import TopRatedMovies from './containers/MoviesListTop';
