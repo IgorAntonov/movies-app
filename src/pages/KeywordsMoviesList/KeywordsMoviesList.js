@@ -3,7 +3,10 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { MoviesList } from '../../features/MoviesList';
-import { fetchMoviesByKeyword, getKeywordsMovies } from '../../ducks/keywords';
+import {
+  fetchMoviesByKeyword,
+  getKeywordsMovies
+} from '../../ducks/keywords';
 
 const mapStateToProps = (state, { id }) => ({
   movies: getKeywordsMovies(state.moviesByKeyword[id]),

@@ -9,10 +9,10 @@ import UpcomingMovies from './containers/MoviesListUpcoming';
 import {
   DetailsPage,
   PersonPage,
-  KeywordsMoviesList
+  KeywordsMoviesList,
+  GenreMoviesList
 } from './pages';
 import Recommendations from './components/Recommendations';
-import GenreMovies from './components/GenreMovies';
 import PersonByQuery from './containers/PersonByQuery';
 import DiscoverMovies from './components/DiscoverMovies';
 import DiscoverList from './components/DiscoverList';
@@ -28,7 +28,7 @@ export const App = () => (
       <Route path="/top" component={TopRatedMovies} />
       <Route path="/popular" component={PopularMovies} />
       <Route path="/upcoming" component={UpcomingMovies} />
-      <Route path="/genres/:id" component={GenreMovies} />
+      <Route path="/genres/:id" component={GenreMoviesList} />
       <Route path="/keyword/:name/:id" component={KeywordsMoviesList} />
       <Route path="/person/:id" component={PersonPage} />
       <Route path="/discover/:sort/:date/:cert/:genres" component={DiscoverList} />
