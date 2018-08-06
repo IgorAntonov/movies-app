@@ -7,3 +7,4 @@ export { PopularMovies } from './PopularMovies';
 export { TopMovies } from './TopMovies';
 export { UpcomingMovies } from './UpcomingMovies';
 export { PersonByQuery } from './PersonByQuery';
+export { Recommendations } from './Recommendations';

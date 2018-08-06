@@ -11,9 +11,9 @@ import {
   PopularMovies,
   TopMovies,
   UpcomingMovies,
-  PersonByQuery
+  PersonByQuery,
+  Recommendations
 } from './pages';
-import Recommendations from './components/Recommendations';
 import DiscoverMovies from './components/DiscoverMovies';
 import DiscoverList from './components/DiscoverList';
 
