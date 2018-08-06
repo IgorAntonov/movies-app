@@ -1,7 +1,9 @@
 import { connect } from 'react-redux';
 
-import { MoviesList } from '../features/MoviesList';
-import { fetchUpcomingMovies, getSortedMoviesArray } from '../ducks/movies';
+import { MoviesList } from '../../features/MoviesList';
+import {
+  fetchUpcomingMovies, getSortedMoviesArray
+} from '../../ducks/movies';
 
 const mapStateToProps = state => ({
   movies: getSortedMoviesArray(state.moviesById.upcoming, 'popularity'),
@@ -9,4 +11,7 @@ const mapStateToProps = state => ({
   totalPages: state.moviesById.currentTotalPages
 });
 
-export default connect(mapStateToProps, {fetchMovies: fetchUpcomingMovies})(MoviesList);
+export const UpcomingMovies = connect(
+  mapStateToProps,
+  { fetchMovies: fetchUpcomingMovies }
+)(MoviesList);

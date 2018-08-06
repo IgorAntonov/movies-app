@@ -2,7 +2,6 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import { Header } from './features/Header';
-import UpcomingMovies from './containers/MoviesListUpcoming';
 import {
   MoviesByQuery,
   DetailsPage,
@@ -10,7 +9,8 @@ import {
   MoviesByKeywords,
   GenreMovies,
   PopularMovies,
-  TopMovies
+  TopMovies,
+  UpcomingMovies
 } from './pages';
 import Recommendations from './components/Recommendations';
 import PersonByQuery from './containers/PersonByQuery';
