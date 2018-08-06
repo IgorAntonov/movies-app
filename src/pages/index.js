@@ -3,3 +3,4 @@ export { PersonPage } from './PersonPage';
 export { MoviesByKeywords } from './MoviesByKeywords';
 export { GenreMovies } from './GenreMovies';
 export { MoviesByQuery } from './MoviesByQuery';
+export { PopularMovies } from './PopularMovies';
