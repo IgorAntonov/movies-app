@@ -6,10 +6,13 @@ import MoviesByQuery from './components/MoviesByQuery';
 import PopularMovies from './containers/MoviesListPopular';
 import TopRatedMovies from './containers/MoviesListTop';
 import UpcomingMovies from './containers/MoviesListUpcoming';
-import { DetailsPage, PersonPage } from './pages';
+import {
+  DetailsPage,
+  PersonPage,
+  KeywordsMoviesList
+} from './pages';
 import Recommendations from './components/Recommendations';
 import GenreMovies from './components/GenreMovies';
-import KeywordsMoviesList from './components/KeywordsMoviesList';
 import PersonByQuery from './containers/PersonByQuery';
 import DiscoverMovies from './components/DiscoverMovies';
 import DiscoverList from './components/DiscoverList';

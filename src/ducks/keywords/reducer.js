@@ -11,11 +11,11 @@ export const keywordReducer = createReducer({
 }, {});
 
 export const moviesByKeywordReducer = createReducer({
-  [actions.requestMoviesByKeyWord]: state => ({
+  [actions.requestMoviesByKeyword]: state => ({
     ...state,
     fetching: true
   }),
-  [actions.successMoviesByKeyWord]: (state, { movies, id, total_pages }) => ({
+  [actions.successMoviesByKeyword]: (state, { movies, id, total_pages }) => ({
     ...state,
     [id]: {
       ...state[id],
