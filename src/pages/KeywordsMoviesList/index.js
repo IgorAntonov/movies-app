@@ -1,1 +1,0 @@
-export { KeywordsMoviesList } from './KeywordsMoviesList';

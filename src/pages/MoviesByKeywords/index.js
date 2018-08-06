@@ -1,0 +1,1 @@
+export { MoviesByKeywords } from './MoviesByKeywords';

@@ -19,11 +19,11 @@ const ConnectedKeywordsList = connect(
   { fetchMovies: fetchMoviesByKeyword }
 )(MoviesList);
 
-export const KeywordsMoviesList = ({ match }) => (
+export const MoviesByKeywords = ({ match }) => (
   <ConnectedKeywordsList id={match.params.id} />
 );
 
-KeywordsMoviesList.propTypes = {
+MoviesByKeywords.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
       id: PropTypes.string

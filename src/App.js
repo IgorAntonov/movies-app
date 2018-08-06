@@ -2,15 +2,15 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import { Header } from './features/Header';
-import MoviesByQuery from './components/MoviesByQuery';
 import PopularMovies from './containers/MoviesListPopular';
 import TopRatedMovies from './containers/MoviesListTop';
 import UpcomingMovies from './containers/MoviesListUpcoming';
 import {
+  MoviesByQuery,
   DetailsPage,
   PersonPage,
-  KeywordsMoviesList,
-  GenreMoviesList
+  MoviesByKeywords,
+  GenreMovies
 } from './pages';
 import Recommendations from './components/Recommendations';
 import PersonByQuery from './containers/PersonByQuery';
@@ -28,8 +28,8 @@ export const App = () => (
       <Route path="/top" component={TopRatedMovies} />
       <Route path="/popular" component={PopularMovies} />
       <Route path="/upcoming" component={UpcomingMovies} />
-      <Route path="/genres/:id" component={GenreMoviesList} />
-      <Route path="/keyword/:name/:id" component={KeywordsMoviesList} />
+      <Route path="/genres/:id" component={GenreMovies} />
+      <Route path="/keyword/:name/:id" component={MoviesByKeywords} />
       <Route path="/person/:id" component={PersonPage} />
       <Route path="/discover/:sort/:date/:cert/:genres" component={DiscoverList} />
       <Route path="/" component={DiscoverMovies} />

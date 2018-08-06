@@ -19,11 +19,11 @@ const ConnectedGenreList = connect(
   { fetchMovies: fetchGenreMovies }
 )(MoviesList);
 
-export const GenreMoviesList = ({ match }) => (
+export const GenreMovies = ({ match }) => (
   <ConnectedGenreList id={match.params.id} />
 );
 
-GenreMoviesList.propTypes = {
+GenreMovies.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
       id: PropTypes.string

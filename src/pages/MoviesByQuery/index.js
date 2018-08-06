@@ -1,0 +1,1 @@
+export { MoviesByQuery } from './MoviesByQuery';
