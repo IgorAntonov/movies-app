@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { PersonPrimary } from '../../features/PersonPrimary';
 import { PersonCast } from '../../features/PersonCast';
-import PersonCrewList from '../../components/PersonCrewList';
+import { PersonCrew } from '../../features/PersonCrew';
 import { LoadingSpinner } from '../../components/LoadingSpinner';
 
 export class PersonPage extends Component {
@@ -47,7 +47,7 @@ export class PersonPage extends Component {
       <div className="personDetails">
         <PersonPrimary details={details} />
         {cast.length > 0 && <PersonCast cast={cast} />}
-        {crew.length > 0 && <PersonCrewList crew={crew} />}
+        {crew.length > 0 && <PersonCrew crew={crew} />}
       </div>
     );
   }
