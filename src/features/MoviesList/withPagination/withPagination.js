@@ -17,7 +17,10 @@ export const withPagination = WrappedComponent => {
       cert: PropTypes.string,
       date: PropTypes.string,
       sort: PropTypes.string,
-      genres: PropTypes.arrayOf(PropTypes.number),
+      genres: PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.number),
+        PropTypes.string
+      ]),
       fetchMovies: PropTypes.func.isRequired,
       fetching: PropTypes.bool,
       totalPages: PropTypes.number,

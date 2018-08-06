@@ -8,3 +8,4 @@ export { TopMovies } from './TopMovies';
 export { UpcomingMovies } from './UpcomingMovies';
 export { PersonByQuery } from './PersonByQuery';
 export { Recommendations } from './Recommendations';
+export { DiscoverMovies } from './DiscoverMovies';

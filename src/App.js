@@ -12,10 +12,10 @@ import {
   TopMovies,
   UpcomingMovies,
   PersonByQuery,
-  Recommendations
+  Recommendations,
+  DiscoverMovies
 } from './pages';
-import DiscoverMovies from './components/DiscoverMovies';
-import DiscoverList from './components/DiscoverList';
+import DiscoverMovies1 from './components/DiscoverMovies';
 
 export const App = () => (
   <div>
@@ -31,8 +31,8 @@ export const App = () => (
       <Route path="/genres/:id" component={GenreMovies} />
       <Route path="/keyword/:name/:id" component={MoviesByKeywords} />
       <Route path="/person/:id" component={PersonPage} />
-      <Route path="/discover/:sort/:date/:cert/:genres" component={DiscoverList} />
-      <Route path="/" component={DiscoverMovies} />
+      <Route path="/discover/:sort/:date/:cert/:genres" component={DiscoverMovies} />
+      <Route path="/" component={DiscoverMovies1} />
     </Switch>
   </div>
 );
