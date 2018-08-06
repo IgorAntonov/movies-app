@@ -9,3 +9,4 @@ export { UpcomingMovies } from './UpcomingMovies';
 export { PersonByQuery } from './PersonByQuery';
 export { Recommendations } from './Recommendations';
 export { DiscoverMovies } from './DiscoverMovies';
+export { SearchPage } from './SearchPage';

@@ -13,9 +13,10 @@ import {
   UpcomingMovies,
   PersonByQuery,
   Recommendations,
-  DiscoverMovies
+  DiscoverMovies,
+  SearchPage
 } from './pages';
-import DiscoverMovies1 from './components/DiscoverMovies';
+
 
 export const App = () => (
   <div>
@@ -32,7 +33,7 @@ export const App = () => (
       <Route path="/keyword/:name/:id" component={MoviesByKeywords} />
       <Route path="/person/:id" component={PersonPage} />
       <Route path="/discover/:sort/:date/:cert/:genres" component={DiscoverMovies} />
-      <Route path="/" component={DiscoverMovies1} />
+      <Route path="/" component={SearchPage} />
     </Switch>
   </div>
 );
