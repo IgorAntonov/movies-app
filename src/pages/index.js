@@ -4,3 +4,4 @@ export { MoviesByKeywords } from './MoviesByKeywords';
 export { GenreMovies } from './GenreMovies';
 export { MoviesByQuery } from './MoviesByQuery';
 export { PopularMovies } from './PopularMovies';
+export { TopMovies } from './TopMovies';

@@ -2,7 +2,6 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import { Header } from './features/Header';
-import TopRatedMovies from './containers/MoviesListTop';
 import UpcomingMovies from './containers/MoviesListUpcoming';
 import {
   MoviesByQuery,
@@ -10,7 +9,8 @@ import {
   PersonPage,
   MoviesByKeywords,
   GenreMovies,
-  PopularMovies
+  PopularMovies,
+  TopMovies
 } from './pages';
 import Recommendations from './components/Recommendations';
 import PersonByQuery from './containers/PersonByQuery';
@@ -25,7 +25,7 @@ export const App = () => (
       <Route exact path="/search/people/:query" component={PersonByQuery} />
       <Route path="/recommendations/:id" component={Recommendations} />
       <Route path="/movies/:id" component={DetailsPage} />
-      <Route path="/top" component={TopRatedMovies} />
+      <Route path="/top" component={TopMovies} />
       <Route path="/popular" component={PopularMovies} />
       <Route path="/upcoming" component={UpcomingMovies} />
       <Route path="/genres/:id" component={GenreMovies} />
