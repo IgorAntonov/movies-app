@@ -12,7 +12,7 @@ export const reducer = createReducer({
     ...state,
     [query]: {
       ...state[query],
-      persons
+      ...persons
     },
     currentTotalPages: total_pages,
     fetching: false

@@ -6,3 +6,4 @@ export { MoviesByQuery } from './MoviesByQuery';
 export { PopularMovies } from './PopularMovies';
 export { TopMovies } from './TopMovies';
 export { UpcomingMovies } from './UpcomingMovies';
+export { PersonByQuery } from './PersonByQuery';

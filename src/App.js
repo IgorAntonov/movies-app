@@ -10,10 +10,10 @@ import {
   GenreMovies,
   PopularMovies,
   TopMovies,
-  UpcomingMovies
+  UpcomingMovies,
+  PersonByQuery
 } from './pages';
 import Recommendations from './components/Recommendations';
-import PersonByQuery from './containers/PersonByQuery';
 import DiscoverMovies from './components/DiscoverMovies';
 import DiscoverList from './components/DiscoverList';
 
