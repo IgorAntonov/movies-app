@@ -1,12 +1,7 @@
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 
-import MoviesList from '../components/MoviesList';
+import { MoviesList } from '../features/MoviesList';
 import { fetchPopularMovies, getSortedMoviesArray } from '../ducks/movies';
-import wrapMoviesList from '../components/HOC/wrapMoviesList';
-
-const WrappedMoviesList = wrapMoviesList(MoviesList);
-
 
 const mapStateToProps = state => ({
   movies: getSortedMoviesArray(state.moviesById.popular, 'popularity'),
@@ -14,11 +9,4 @@ const mapStateToProps = state => ({
   totalPages: state.moviesById.currentTotalPages,
 });
 
-export default connect(mapStateToProps, {fetchMovies: fetchPopularMovies})(WrappedMoviesList);
-
-WrappedMoviesList.propTypes = {
-  fetchMovies: PropTypes.func,
-  movies: PropTypes.array
-};
-
-
+export default connect(mapStateToProps, {fetchMovies: fetchPopularMovies})(MoviesList);

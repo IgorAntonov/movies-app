@@ -136,7 +136,7 @@ export class SideBar extends Component {
             </button>
           </nav>
         </div>
-        {genresOpen && <SideBarGenres closeMenu={this.closeMenu} />}
+        {genresOpen && <SideBarGenres closeMenu={closeMenu} />}
       </div>
     );
   }

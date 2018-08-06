@@ -1,10 +1,7 @@
 import { connect } from 'react-redux';
 
-import MoviesList from '../components/MoviesList';
-import wrapMoviesList from '../components/HOC/wrapMoviesList';
+import { MoviesList } from '../features/MoviesList';
 import { fetchDiscoverMovies, getSortedDiscoverMovies } from '../ducks/discover-movies';
-
-const WrappedMoviesList = wrapMoviesList(MoviesList);
 
 const mapStateToProps = ( state, ownProps ) => {
   const { sort, date, cert, genres } = ownProps;
@@ -15,4 +12,4 @@ const mapStateToProps = ( state, ownProps ) => {
   }
 };
 
-export default connect(mapStateToProps, { fetchMovies: fetchDiscoverMovies})(WrappedMoviesList);
+export default connect(mapStateToProps, { fetchMovies: fetchDiscoverMovies})(MoviesList);
