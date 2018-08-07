@@ -1,0 +1,1 @@
+export { FormGenres } from './FormGenres';

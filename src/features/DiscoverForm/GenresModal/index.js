@@ -1,0 +1,1 @@
+export { GenresModal } from './GenresModal';
