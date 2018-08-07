@@ -1,4 +1,4 @@
-import { values } from 'lodash';
+import { values, sortBy } from 'lodash';
 import { createReducer } from 'redux-act';
 
 import { actions } from './actions';
@@ -19,4 +19,7 @@ export const reducer = createReducer({
   })
 }, { fetching: false });
 
-export const getPersonsArray = persons => values(persons);
+export const getPersonsArray = persons => {
+  const unsorted = values(persons);
+  return sortBy(unsorted, 'popularity').reverse();
+};
