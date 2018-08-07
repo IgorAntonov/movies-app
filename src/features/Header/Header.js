@@ -30,7 +30,6 @@ export class Header extends Component {
 
   changeSearchType = searchType => this.setState({ searchType });
 
-
   renderSubTitle = () => {
     const {
       location: { pathname },
@@ -38,13 +37,13 @@ export class Header extends Component {
     } = this.props;
     switch (true) {
       case /\/popular/.test(pathname):
-        return '| Popular';
+        return ' Popular';
       case /\/top/.test(pathname):
-        return '| Top movies';
+        return ' Top movies';
       case /\/upcoming/.test(pathname):
-        return '| Upcoming movies';
+        return ' Upcoming movies';
       case subTitle !== null:
-        return `| ${subTitle}`;
+        return ` ${subTitle}`;
       default:
         return '';
     }
@@ -55,27 +54,25 @@ export class Header extends Component {
     const { searchType, isModalOpen } = this.state;
     return (
       <header className="header">
-        <div className="header__wrapper">
-          <div // eslint-disable-line
-            onClick={this.openMenuClick}
-            className="header__icon header__icon--burger"
-          >
-            <Icon icon="burger" width="30" height="30" />
-          </div>
+        <button
+          onClick={this.openMenuClick}
+          className="header__icon"
+          type="button"
+        >
+          <Icon icon="burger" width="33" height="33" />
+        </button>
+        <Link to="/" className="header__title">
+          <h2 className="header__title__content">Movies App</h2>
+        </Link>
 
-          <Link to="/" className="header__title">
-            <h2 className="header__title__content">Movies App</h2>
-          </Link>
+        <h4 className="header__subtitle">
+          {this.renderSubTitle()}
+        </h4>
 
-          <h4 className="header__subtitle">
-            {this.renderSubTitle()}
-          </h4>
-
-          <SearchBar
-            history={history}
-            searchType={searchType}
-          />
-        </div>
+        <SearchBar
+          history={history}
+          searchType={searchType}
+        />
 
         {isModalOpen && (
           <SideBar

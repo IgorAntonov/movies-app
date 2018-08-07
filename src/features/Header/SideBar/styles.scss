@@ -28,21 +28,24 @@
     opacity: 0;
   }
 }
+@keyframes openSearchTypes {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
 
 .sidebar {
   position: fixed;
   top: 0;
   
   z-index: 1000;
-
   width: 250px;
   height: 100vh;
   
   background-color: $white-darken-2;
-  box-shadow: 12px 0 17px rgba(0,0,0,0.2);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   
-  animation: openSidebar 0.3s ease-out;
-
+  animation: openSidebar 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  user-select: none;
   &__closing {
     animation: closeSidebar 0.3s ease-out;
   }
@@ -64,12 +67,25 @@
     margin-left: 10px;
     
     &__wrapper {
-      width: 30px;
-      height: 30px;
+      display: flex;
+      padding: 0;
+      margin: 0;
+      border: none;
+      background-color: transparent;
+
+      &:focus {
+        outline: none;
+      }
     }
     & svg {
+      transform: scaleX(1.5) scaleY(0.7) rotate(90deg);
       cursor: pointer;
       fill: $secondary-text;
+      transition: 0.3s all;
+      &:hover {
+        fill: $dark-primary;
+        transform: none;
+      }
     }
   }
 }
@@ -77,47 +93,56 @@
 .navigation {
   display: flex;
   flex-direction: column;
-  
-
   padding-top: 12px;
   padding-bottom: 12px;
-
   border-top: 1px solid $divider-color;
-
   &__item {
     display: flex;
     align-items: center;
-
     padding: 10px 5px;
-
+    
+    color: $secondary-text;
+    fill: $secondary-text;
+    transition: 0.3s all;
+    &:focus {
+      text-decoration: none;
+      color: $secondary-text;
+    }
     &__icon {
       width: 55px;
       height: 25px;
       padding-left: 10px;
       padding-right: 20px;
       & svg {
-        fill: $secondary-text;
+        fill: inherit;
       }
     }
     &__text {
       font-family: $font-family;
       font-weight: $font-regular;
-      color: $secondary-text;
+      color: inherit;
     }
     &:hover {
+      color: $accent;
+      fill: $accent;
       text-decoration: none;
       background-color: $white-darken-3;
     }
 
     &__selected {
       background-color: $white-darken-5;
+      color: $accent;
+      fill: $accent;
+      cursor: default;
       &:hover {
         background-color: $white-darken-5;
       }
     }
     
     &--button {
+      position: relative;
       border: none;
+      padding: 0;
       background: none; 
       cursor: pointer;    
       &:active {
@@ -146,8 +171,15 @@
     &--wrapper {
       display: flex;
       width: 100%;
-
+      border: none;
+      padding: 10px 5px;
+      
+      color: inherit;
+      background-color: transparent;
       cursor: pointer;
+      &:focus {
+        outline: none;
+      }
     }
   }
 }
@@ -168,24 +200,23 @@
   height: 100vh;
 
   background-color: $white-darken-2;
-  box-shadow: inset 7px 0 17px rgba(0,0,0,0.2), 7px 0 17px rgba(0,0,0,0.2);
+  box-shadow: inset 3px 0 8px rgba(0,0,0,0.2), 3px 0 8px rgba(0,0,0,0.2);
 }
 
 .searchTypes {
   position: absolute;
   top: 0;
   left: 100%;
+  
   z-index: 100;
-
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  
   padding: 10px 15px;
-  border-radius: 5px;
-
-  background-color: $white-darken-2;
-  box-shadow: inset 7px 0 17px rgba(0,0,0,0.2), 7px 0 17px rgba(0,0,0,0.1);
+  
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  background-color: $white-darken-3;
+  animation: openSearchTypes 0.6s cubic-bezier(0.19, 1, 0.22, 1);
 
   &__button {
     padding: 5px 20px;
@@ -201,15 +232,9 @@
       outline: none;
     }
     &:hover {
-      background-color: $white-darken-2;
+      background-color: $white-darken-3;
       color: $dark-primary;
+      cursor: pointer;
     }
   }
 }
-
-
-
-
-
-
-

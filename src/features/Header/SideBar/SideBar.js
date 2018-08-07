@@ -33,9 +33,13 @@ export class SideBar extends Component {
     genresOpen: !prevState.genresOpen
   }));
 
+  searchOpen = () => this.setState({ searchOpen: true });
+
+  searchClose = () => this.setState({ searchOpen: false });
+
   searchToggle = () => this.setState(prevState => ({
     searchOpen: !prevState.searchOpen
-  }));
+  }))
 
   searchTypeClick = e => {
     const { changeType, closeMenu } = this.props;
@@ -68,7 +72,7 @@ export class SideBar extends Component {
               className="sidebar__burger__wrapper"
               type="button"
             >
-              <Icon className="navigation__item__icon" icon="burger" width="30" height="30" />
+              <Icon className="navigation__item__icon" icon="burger" width="33" height="33" />
             </button>
           </div>
 
@@ -76,6 +80,8 @@ export class SideBar extends Component {
             <div className="navigation__item navigation__item--button navigation__item--search">
               <button
                 onClick={this.searchToggle}
+                onMouseEnter={this.searchOpen}
+                onMouseLeave={this.searchClose}
                 className="navigation__item--wrapper"
                 type="button"
               >
@@ -85,7 +91,11 @@ export class SideBar extends Component {
                 <span className="navigation__item__text">Search</span>
               </button>
               {searchOpen && (
-                <div className="searchTypes">
+                <div
+                  className="searchTypes"
+                  onMouseEnter={this.searchOpen}
+                  onMouseLeave={this.searchClose}
+                >
                   <button
                     className="searchTypes__button"
                     onClick={this.searchTypeClick}
@@ -123,7 +133,7 @@ export class SideBar extends Component {
             />
 
             <button
-              className="navigation__item navigation__item--button"
+              className="navigation__item navigation__item--button navigation__item--wrapper"
               onClick={this.genresToggle}
               type="button"
             >

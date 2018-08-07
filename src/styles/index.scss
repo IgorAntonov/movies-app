@@ -3,22 +3,20 @@
 @import './custom/main.scss';
 
 @import '../ui/LoadingSpinner/styles.scss';
-@import '../features/Header/styles.scss';
-
-@import '../features/MoviesList/styles.scss';
+@import '../ui/CarouselDecorators/styles.scss';
 
 @import '../pages/DetailsPage/styles.scss';
+@import '../pages/PersonPage/styles.scss';
+@import '../pages/PersonByQuery/styles.scss';
+@import '../pages/SearchPage/styles.scss';
+
+@import '../features/MoviesList/styles.scss';
+@import '../features/Header/styles.scss';
 @import '../features/DetailsPrimary/styles.scss';
 @import '../features/DetailsMedia/styles.scss';
 @import '../features/DetailsSimilar/styles.scss';
 @import '../features/DetailsRecommendations/styles.scss';
-@import '../ui/CarouselDecorators/styles.scss';
-
-@import '../pages/PersonPage/styles.scss';
 @import '../features/PersonPrimary/styles.scss';
 @import '../features/PersonCast/styles.scss';
 @import '../features/PersonCrew/styles.scss';
-
-@import '../pages/PersonByQuery/styles.scss';
-@import '../pages/SearchPage/styles.scss';
 @import '../features/DiscoverForm/styles.scss';
