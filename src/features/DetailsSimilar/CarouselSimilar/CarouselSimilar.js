@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Carousel from 'nuka-carousel';
 import { Link } from 'react-router-dom';
 
-import { LeftArrow, RightArrow } from '../../../components/CarouselDecorators';
+import { LeftArrow, RightArrow } from '../../../ui/CarouselDecorators';
 
 export const CarouselSimilar = ({ slides }) => {
   const settings = {

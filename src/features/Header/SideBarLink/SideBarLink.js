@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 
-import Icon from '../../../components/Icon';
+import { Icon } from '../../../ui/Icon';
 
 export const SideBarLink = ({
   to, closeMenu, text, icon

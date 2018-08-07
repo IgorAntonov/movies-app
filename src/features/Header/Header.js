@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-import Icon from '../../components/Icon';
+import { Icon } from '../../ui/Icon';
 import { SearchBar } from './SearchBar';
 import { SideBar } from './SideBar';
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import { LoadingSpinner } from '../../../components/LoadingSpinner';
+import { LoadingSpinner } from '../../../ui/LoadingSpinner';
 
 const getDisplayName = WrappedComponent => (
   WrappedComponent.displayName || WrappedComponent.name || 'Component'

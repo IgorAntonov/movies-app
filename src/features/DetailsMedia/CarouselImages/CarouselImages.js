@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Carousel from 'nuka-carousel';
 
-import { LeftArrow, RightArrow } from '../../../components/CarouselDecorators';
+import { LeftArrow, RightArrow } from '../../../ui/CarouselDecorators';
 import { CarouselModal } from '../CarouselModal';
 
 export class CarouselImages extends Component {

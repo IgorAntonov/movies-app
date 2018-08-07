@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { PersonPrimary } from '../../features/PersonPrimary';
 import { PersonCast } from '../../features/PersonCast';
 import { PersonCrew } from '../../features/PersonCrew';
-import { LoadingSpinner } from '../../components/LoadingSpinner';
+import { LoadingSpinner } from '../../ui/LoadingSpinner';
 
 export class PersonPage extends Component {
   static propTypes = {

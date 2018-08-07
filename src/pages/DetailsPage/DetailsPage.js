@@ -5,7 +5,7 @@ import { DetailsPrimary } from '../../features/DetailsPrimary';
 import { DetailsMedia } from '../../features/DetailsMedia';
 import { DetailsSimilar } from '../../features/DetailsSimilar';
 import { DetailsRecommendations } from '../../features/DetailsRecommendations';
-import { LoadingSpinner } from '../../components/LoadingSpinner';
+import { LoadingSpinner } from '../../ui/LoadingSpinner';
 
 export class DetailsPage extends Component {
   static propTypes = {

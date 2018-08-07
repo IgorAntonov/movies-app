@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 
 import { GENRES } from '../../../ducks/GENRES';
-import Icon from '../../../components/Icon';
+import { Icon } from '../../../ui/Icon';
 
 export class GenresModal extends Component {
   static propTypes = {

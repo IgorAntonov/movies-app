@@ -2,7 +2,7 @@
 @import './custom/variables.scss';
 @import './custom/main.scss';
 
-@import '../components/LoadingSpinner/styles.scss';
+@import '../ui/LoadingSpinner/styles.scss';
 @import '../features/Header/styles.scss';
 
 @import '../features/MoviesList/styles.scss';
@@ -12,7 +12,7 @@
 @import '../features/DetailsMedia/styles.scss';
 @import '../features/DetailsSimilar/styles.scss';
 @import '../features/DetailsRecommendations/styles.scss';
-@import '../components/CarouselDecorators/styles.scss';
+@import '../ui/CarouselDecorators/styles.scss';
 
 @import '../pages/PersonPage/styles.scss';
 @import '../features/PersonPrimary/styles.scss';
@@ -22,4 +22,3 @@
 @import '../pages/PersonByQuery/styles.scss';
 @import '../pages/SearchPage/styles.scss';
 @import '../features/DiscoverForm/styles.scss';
-@import '../components/DiscoverGenresModal/styles.scss';

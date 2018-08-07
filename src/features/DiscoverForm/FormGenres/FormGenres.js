@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import { GenresModal } from '../GenresModal';
-import Icon from '../../../components/Icon';
+import { Icon } from '../../../ui/Icon';
 
 export const FormGenres = ({
   clickAddGenres,

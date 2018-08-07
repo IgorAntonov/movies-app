@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 
-import Icon from '../../../components/Icon';
+import { Icon } from '../../../ui/Icon';
 import { SideBarLink } from '../SideBarLink';
 import { SideBarGenres } from '../SideBarGenres';
 
