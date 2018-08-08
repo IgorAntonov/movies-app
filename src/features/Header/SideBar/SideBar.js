@@ -114,6 +114,12 @@ export class SideBar extends Component {
               )}
             </div>
             <SideBarLink
+              to="/"
+              closeMenu={closeMenu}
+              icon="home"
+              text="Discover"
+            />
+            <SideBarLink
               to="/popular"
               closeMenu={closeMenu}
               icon="star"

@@ -11,6 +11,7 @@ export const SideBarLink = ({
     to={to}
     className="navigation__item"
     activeClassName="navigation__item__selected"
+    exact
     onClick={closeMenu}
   >
     <div className="navigation__item__icon">
