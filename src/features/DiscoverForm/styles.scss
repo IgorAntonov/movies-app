@@ -2,15 +2,20 @@
 
 .discoverForm {
   display: flex;
-  flex-wrap: wrap;
-
+  flex-direction: column;
+  @media only screen and (min-width: 620px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  user-select: none;
 }
-
 .discoverFormSort {
   display: flex;
   flex-direction: column;
-  flex: 1 1 33%;
-
+  flex: 1 1 30%;
+  @media only screen and (min-width: 1100px) {
+    flex: 5 1 10%;
+  }
   padding: 15px;
 
   background-color: $white-darken-5;
@@ -24,18 +29,17 @@
 
   &__legend {
     margin: 0;
-
+    
+    font-size: 20px;
     font-family: $font-family;
     font-weight: $font-bold;
     color: $secondary-text;
-
     cursor: default;
   }
 
   &__choices {
     display: flex;
     flex-direction: column;
-
     padding: 0 10px;
   }
 
@@ -43,7 +47,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-
     padding: 0 10px;
   }
 
@@ -56,7 +59,6 @@
     
     background-color: transparent;
     cursor: pointer;
-
     &:focus {
       outline: none;
     }
@@ -65,47 +67,46 @@
     }
 
     &--up {
-      
       &Selected > svg {
-        fill: green;
+        fill: $accent;
         cursor: default;
       }
     }
     &--down {
       &Selected > svg {
-        fill: red;
+        fill: $accent;
         cursor: default;
       }
     }
   }
 
   &__btn {
-    margin: 2px;
+    margin: 4px;
     padding: 5px 8px;
 
-    border: 1px solid $divider-color;
-    border-radius: 3px;
+    border: none;
+    border-radius: 4px;
 
     font-family: $font-family;
     font-weight: $font-bold;
-    color: $secondary-text;
-    background-color: $white-darken-2;
+    color: #eee;
+    background-color: $light-primary;
     cursor: pointer;
     
-    transition: 0.5s background-color;
-
-    
-    &:hover {
-      background-color: $white-darken-5;
-    }
-    &:focus {
+    transition: 0.3s all;
+    &:hover, &:focus {
+      background-color: $dark-primary;
       outline: none;
     }
     &--selected {
-      color: green;
+      transform: translateX(15%);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+
+      background-color: $accent;
+      color: #eee;
       cursor: default;
-      &:hover {
-        background-color: $white-darken-2;
+      &:hover, &:focus {
+        background-color: $accent;
       }
     }
   }
@@ -114,19 +115,21 @@
 .discoverFormYear {
   display: flex;
   flex-direction: column;
-  flex: 1 1 33%;
-
+  flex: 2 1 30%;
+  @media only screen and (min-width: 1100px) {
+    flex: 1 1 30%;
+  }
   padding: 15px;
 
   background-color: $white-darken-2;
 
   &__legend {
     margin: 0;
-
+    
+    font-size: 20px;
     font-family: $font-family;
     font-weight: $font-bold;
     color: $secondary-text;
-
     cursor: default;
   }
 
@@ -151,14 +154,12 @@
       width: 40%;
     }
 
-
   }
   &__divideLine {
     font-family: $font-family;
     font-weight: $font-bold;
     color: $secondary-text;
     cursor: default;
-    
   }
 
   &__choice {
@@ -176,13 +177,15 @@
     margin-left: 20px;
     padding-left: 10px;
     border: 1px solid $divider-color;
+    border-radius: 4px;
     
     font-family: $font-family;
     font-weight: $font-bold;
     color: $secondary-text;
-
-    &:focus {
+    cursor: pointer;
+    &:focus, &:active {
       outline-color: $accent;
+      cursor: text;
     }
   }
 }
@@ -190,15 +193,18 @@
 .discoverFormCert {
   display: flex;
   flex-direction: column;
-  flex: 1 1 33%;
-
+  align-items: center;
+  flex: 1 1 100%;
+  @media only screen and (min-width: 1100px) {
+    flex: 1 1 40%;
+  }
   padding: 15px;
-
   background-color: $white-darken-5;
 
   &__legend {
-    margin: 0;
-
+    margin-bottom: 10px;
+    
+    font-size: 20px;
     font-family: $font-family;
     font-weight: $font-bold;
     color: $secondary-text;
@@ -218,30 +224,34 @@
   }
 
   &__btn {
-    margin: 2px;
-    padding: 5px 18px;
+    margin: 4px;
+    padding: 5px 12px;
+    border: none;
+    border-radius: 4px;
 
-    border: 1px solid $divider-color;
-    border-radius: 3px;
+    @media only screen and (max-width: 420px) {
+      padding: 5px;
+    }
 
     font-family: $font-family;
     font-weight: $font-bold;
-    color: $secondary-text;
-    background-color: $white-darken-2;
+    color: #eee;
+    background-color: $light-primary;
     cursor: pointer;
     
-    transition: 0.5s background-color;
+    transition: 0.3s all;
     &:hover {
-      background-color: $white-darken-5;
+      background-color: $dark-primary;
     }
     &:focus {
       outline: none;
     }
     &--selected {
-      color: green;
+      transform: translateY(-30%);
       cursor: default;
+      background-color: $accent;
       &:hover {
-        background-color: $white-darken-2;
+        background-color: $accent;
       }
     }
   }
@@ -276,11 +286,9 @@
 }
 
 .discoverFormGenres {
-  
   display: flex;
   flex-direction: column;
-  flex: 1 1 50%;
-
+  flex: 1 1 100%;
   padding: 15px;
   
   background-color: $white-darken-2;
@@ -288,10 +296,16 @@
     position: relative;
 
     margin: 0;
-
+    
+    font-size: 20px;
     font-family: $font-family;
     font-weight: $font-bold;
     color: $secondary-text;
+  }
+  &__text {
+    @media only screen and (max-width: 420px) {
+      display: none;
+    }
   }
 
   &__addBtn {
@@ -322,22 +336,23 @@
     top: 15%;
     right: 0;
     
-    padding: 3px 5px;
-    border: 1px solid $divider-color;
-    border-radius: 3px;
+    padding: 3px 7px;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 
     font-family: $font-family;
     font-weight: $font-bold;
-    color: $primary-text;
-    background-color: $white-darken-5;
+    color: #fafafa;
+    background-color: $light-primary;
     cursor: pointer;
     
-    transition: 0.5s all;
+    transition: 0.3s all;
     &:hover {
       text-decoration: none;
       background-color: $accent;
       border-color: $accent;
-      box-shadow: 10px 2px 18px rgba(0, 150, 135, 0.37), -10px -2px 18px rgba(0, 150, 135, 0.37);
+      box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
       color: $white-darken-2;
     }
     &:focus {
@@ -356,22 +371,23 @@
     padding: 10px 0;
 
     border-top: 2px solid $accent;
-    border-bottom: 2px solid $accent;
+
        
   }
 
   &__genresItem {
     display: flex;
     align-items: center;
-    padding: 8px;
-    padding-right: 0;
+    padding: 8px 12px;
+    padding-right: 6px;
     margin: 5px 10px;
     border: 1px solid $divider-color;
+    border-radius: 4px;
 
     font-family: $font-family;
     font-weight: $font-bold;
     color: $secondary-text;
-    cursor: default;
+    cursor: pointer;
   }
 
   &__closeBtn {

@@ -17,11 +17,13 @@
     color: $secondary-text;
     font-family: $font-family;
     font-weight: $font-medium;
+    cursor: pointer;
     
     transition: 0.3s all cubic-bezier(0.68, -0.55, 0.265, 1.55);
     &:focus {
       width: 300px;
       outline: none;
+      cursor: text;
       @media only screen and (max-width: 640px) {
         width: 200px;
       }

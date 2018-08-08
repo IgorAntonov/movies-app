@@ -17,13 +17,15 @@ export const FormGenres = ({
 }) => (
   <div className="discoverFormGenres">
     <legend className="discoverFormGenres__legend">
-      With genres:
+      <span className="discoverFormGenres__text">
+        With genres:
+      </span>
       <button
         className="discoverFormGenres__addBtn"
         onClick={clickAddGenres}
         type="button"
       >
-        Add
+        add
       </button>
       <Link
         to={linkWhenSubmit()}
