@@ -1,8 +1,6 @@
 .castAndCrew {
   display: flex;
-
-  width: 432px;
-  height: 613px;
+  flex-basis: 30%;
   margin-left: 40px;
   
   font-family: $font-family;
@@ -10,18 +8,15 @@
   &__crew {
     display: flex;
     flex-direction: column;
-
-    border: 1px solid $divider-color;
-    box-shadow: 5px 10px 17px rgba(0,0,0,0.2);
-    
+    justify-content: space-around;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);    
   }
   &__cast {
     display: flex;
     flex-direction: column;
-     
+    justify-content: space-around;
     margin-left: 10px;
-    border: 1px solid $divider-color;
-    box-shadow: 5px 10px 17px rgba(0,0,0,0.2);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   }
 }
 
@@ -29,10 +24,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
   border-bottom: 1px solid $divider-color;
   padding: 10px 20px;
-
+  
+  color: $primary-text;
+  transition: 0.2s all;
+  &:hover {
+    background-color: $white-darken-5;
+    color: $accent;
+  }
   &__job {
     margin: 0;
     margin: auto;
@@ -45,7 +45,6 @@
     margin: auto;
     
     font-weight: $font-regular;
-    color: $primary-text;
     opacity: 0.87;
   }
 }
@@ -53,14 +52,18 @@
 .castItem {
   display: flex;
   flex-direction: column;
-
   border-bottom: 1px solid $divider-color;
   padding: 10px;
 
+  color: $primary-text;
+  transition: 0.2s all;
+  &:hover {
+    background-color: $white-darken-5;
+    color: $accent;
+  }
   &__character {
     margin: 0;
     margin: auto;
-
     color: $secondary-text;
     font-weight: $font-light;
   }
@@ -69,15 +72,13 @@
     margin: auto;
     
     font-weight: $font-regular;
-    color: $primary-text;
+    color: inherit;
     opacity: 0.87;
   }
 }
 
 .primaryListLink {
-  transition: 0.4s;
-  &:hover {
-    background-color: $white-darken-5;
+  &:hover, &:focus {
     text-decoration: none;
   }
 }

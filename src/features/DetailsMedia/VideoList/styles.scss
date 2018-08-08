@@ -1,28 +1,26 @@
 .youtubeVideoList {
   display: flex;
   flex-direction: column;
-
   &__list {
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     align-items: center;
   }
 
   &__item {
     width: 80%;
-    
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     border: none;
-    border-radius: 2px;
+    border-radius: 4px;
     
     background-color: $white-darken-5;
     font-family: $font-family;
     font-weight: $font-regular;
     color: $accent;
     opacity: 0.87;
-
+    cursor: pointer;
     transition: background-color 0.7s;
-
     &:focus {
       outline: none;
     }
@@ -32,9 +30,11 @@
   }
 
   &__title {
+    text-align: center;
     font-family: $font-family;
     font-weight: $font-regular;
     color: $primary-text;
     opacity: 0.87;
+    cursor: default;
   }
 }

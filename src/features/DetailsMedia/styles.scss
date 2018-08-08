@@ -6,12 +6,9 @@
 .detailsMedia {
   display: flex;
   flex-direction: column;
-
   margin-top: 40px;
   padding: 15px;
-
-  border: 1px solid $divider-color;
-  box-shadow: 5px 10px 17px rgba(0,0,0,0.2);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 
   font-family: $font-family;
 
@@ -20,21 +17,19 @@
 
     color: $primary-text;
     opacity: 0.87;
-
     font-size: 22px;
+    cursor: default;
   }
 
   &__images {
     margin: 20px auto;
     padding: 20px;
     width: 80%;
-    
     border-radius: 5px;
-    border: 1px solid $divider-color;
-    box-shadow: 5px 10px 17px rgba(0,0,0,0.2);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    
     background-color: $white-darken-5;
     transition: background-color 0.7s;
-
     &:hover {
       background-color: $divider-color;
     }
@@ -42,13 +37,11 @@
   &__videos {    
     margin: 0 auto;
     width: 90%;
-    
     border-radius: 5px;
-    border: 1px solid $divider-color;
-    box-shadow: 5px 10px 17px rgba(0,0,0,0.2);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    
     background-color: $white-darken-5;
     transition: background-color 0.7s;
-
     &:hover {
       background-color: $divider-color;
     }

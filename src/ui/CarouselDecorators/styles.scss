@@ -1,4 +1,5 @@
 .carousel__arrow {
+  position: relative;
   display: flex;
   z-index: 10;
   width: 50px;
@@ -9,17 +10,22 @@
 
   box-shadow: 5px 5px 7px rgba(0,0,0,0.4);
   background: $accent;
-
+  cursor: pointer;
   &:active {
     transform: scale(1.1);
   }
   &:focus {
     outline: none;
   }
+  &--left {
+    right: 60%;
+  }
+  &--right {
+    left: 50%;
+  }
 }
 
 .carousel__icon {
-  
   width: 40px;
   height: 40px;
   margin: auto;
