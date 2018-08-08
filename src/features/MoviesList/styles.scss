@@ -1,11 +1,17 @@
 .movieList {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: 0 auto;
   margin-top: 60px;
-  padding: 10px 110px;
-
+  padding: 10px 10px;
   user-select: none;
+  @media only screen and (max-width: 703px) {
+   flex-wrap: nowrap;
+   flex-direction: column;
+   align-items: center;
+  }
   &__spinner {
     display: flex;
     justify-content: center;

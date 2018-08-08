@@ -23,6 +23,9 @@
   &__showButton {
     padding: 10px;
     width: 15%;
+    @media only screen and (max-width: 640px) {
+      width: 40%;
+    }
     
     cursor: pointer;
     border: 2px solid transparent;

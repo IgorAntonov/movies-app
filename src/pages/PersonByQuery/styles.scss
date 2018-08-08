@@ -2,8 +2,10 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  max-width: 1200px;
+  margin: 0 auto;
   margin-top: 60px;
-  padding: 10px 110px;
+  padding: 10px 10px;
 
   user-select: none;
   &__item {

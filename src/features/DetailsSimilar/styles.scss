@@ -3,13 +3,11 @@
 .detailsSimilar {
   display: flex;
   flex-direction: column;
-  margin-top: 40px;
-  padding: 15px;
-  border: 1px solid $divider-color;
+  margin-top: 20px;
+  padding: 10px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 
   font-family: $font-family;
-
   &__title {
     margin-left: 30px;
     
@@ -23,7 +21,6 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
-    border: 1px solid lighten($divider-color, 12);
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     &__title {
       margin: 0;
@@ -40,7 +37,6 @@
       display: flex;
       justify-content: space-around;
       flex-wrap: wrap;
-      margin: 0 290px;
     }
     &__ref {
       padding: 10px;
@@ -58,6 +54,9 @@
   }
 
   &__moviesList {
+    @media only screen and (max-width: 639px) {
+      display: none;
+    }
     margin: 10px auto;
     padding: 10px 20px;
     width: 80%;

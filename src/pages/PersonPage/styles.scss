@@ -1,7 +1,8 @@
 .personDetails {
   display: flex;
   flex-direction: column;
-
+  max-width: 1200px;
+  margin: 0 auto;
   margin-top: 80px;
-  padding: 0 120px;
+  padding: 0 10px;
 }

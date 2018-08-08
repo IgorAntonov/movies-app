@@ -4,6 +4,9 @@
 @import './YoutubeVideo/styles.scss';
 
 .detailsMedia {
+  @media only screen and (max-width: 639px) {
+    display: none;
+  }
   display: flex;
   flex-direction: column;
   margin-top: 40px;
@@ -34,7 +37,10 @@
       background-color: $divider-color;
     }
   }
-  &__videos {    
+  &__videos {
+    @media only screen and (max-width: 1000px) {
+      display: none;
+    }
     margin: 0 auto;
     width: 90%;
     border-radius: 5px;
