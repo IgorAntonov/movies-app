@@ -1,0 +1,33 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  
+  background-color: #201e1c;
+  &__copyright {
+    margin: 0;
+    color: #7b7a7a;
+    cursor: default;
+  }
+
+  &__social {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__link {
+    margin: 4px;
+    padding: 4px;
+    border: none;
+    
+    cursor: pointer;
+    background-color: transparent;
+    fill: #7b7a7a;
+    transition: 0.2s fill;
+    &:hover, &:focus {
+      outline: none;
+      fill: #fafafa;
+    }
+  }
+}

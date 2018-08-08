@@ -2,6 +2,8 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import { Header } from './features/Header';
+import { Footer } from './ui/Footer';
+
 import {
   MoviesByQuery,
   DetailsPage,
@@ -19,7 +21,7 @@ import {
 
 
 export const App = () => (
-  <div>
+  <div className="app">
     <Header />
     <Switch>
       <Route exact path="/search/movies/:query" component={MoviesByQuery} />
@@ -35,5 +37,6 @@ export const App = () => (
       <Route path="/discover/:sort/:date/:cert/:genres" component={DiscoverMovies} />
       <Route path="/" component={SearchPage} />
     </Switch>
+    <Footer />
   </div>
 );
