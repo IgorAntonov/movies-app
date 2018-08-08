@@ -1,0 +1,20 @@
+.notFound {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px;
+
+  user-select: none;
+  &__text {
+    color: #201e1c;
+    cursor: default;
+  }
+  &__error {
+    color: $accent;
+    cursor: default;
+  }
+}

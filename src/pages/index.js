@@ -10,3 +10,4 @@ export { PersonByQuery } from './PersonByQuery';
 export { Recommendations } from './Recommendations';
 export { DiscoverMovies } from './DiscoverMovies';
 export { SearchPage } from './SearchPage';
+export { NotFound } from './NotFound';
