@@ -1,0 +1,35 @@
+.scrollToTop {
+  position: fixed;
+  left: 2%;
+  bottom: 10%;
+  
+  display: none;
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  border: none;
+  border-radius: 100%;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  
+  background-color: $light-primary;
+  cursor: pointer;
+  transition: 0.3s all;
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  }
+  &:active {
+    transform: scale(1.2);
+  }
+  &--show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  & > svg {
+    fill: #fafafa;
+  }
+}

@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import { Header } from './features/Header';
 import { Footer } from './ui/Footer';
+import { ScrollToTop } from './features/ScrollToTop';
 
 import {
   MoviesByQuery,
@@ -24,6 +25,7 @@ import {
 export const App = () => (
   <div className="app">
     <Header />
+    <ScrollToTop />
     <Switch>
       <Route exact path="/" component={SearchPage} />
       <Route exact path="/search/movies/:query" component={MoviesByQuery} />
