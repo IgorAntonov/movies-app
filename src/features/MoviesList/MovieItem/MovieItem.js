@@ -38,5 +38,5 @@ MovieItem.propTypes = {
 };
 
 MovieItem.defaultProps = {
-  backdrop_path: null
+  backdrop_path: '' // eslint-disable-line
 };
