@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import { MovieItem } from './MovieItem';
 import { withPagination } from './withPagination';
+import { LoadingSpinner } from '../../ui/LoadingSpinner';
 
 const MoviesList = ({ movies, children }) => {
   if (movies.length) {
@@ -19,8 +20,8 @@ const MoviesList = ({ movies, children }) => {
     );
   }
   return (
-    <div className="movieList">
-      Movies list is empty :(
+    <div className="detailsSpinnerWrapper">
+      <LoadingSpinner />
     </div>
   );
 };
